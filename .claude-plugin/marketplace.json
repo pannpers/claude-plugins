@@ -1,0 +1,14 @@
+{
+  "name": "pannpers-plugins",
+  "description": "General-purpose skills for Claude Code by pannpers",
+  "owner": {
+    "name": "pannpers"
+  },
+  "plugins": [
+    {
+      "name": "mermaid-diagrams",
+      "source": "./plugins/mermaid-diagrams",
+      "description": "Choose the Mermaid diagram type that fits the information, write it from the current official syntax and check that it renders"
+    }
+  ]
+}

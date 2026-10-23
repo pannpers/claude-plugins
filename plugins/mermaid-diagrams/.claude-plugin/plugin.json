@@ -1,0 +1,9 @@
+{
+  "name": "mermaid-diagrams",
+  "description": "Choose the Mermaid diagram type that fits the information, write it from the current official syntax and check that it renders",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins"
+}
