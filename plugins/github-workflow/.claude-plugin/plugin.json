@@ -1,0 +1,10 @@
+{
+  "name": "github-workflow",
+  "description": "Commit, open and drive GitHub pull requests to merge-ready, respond to review feedback, start tracked issues and cut SemVer releases with the gh CLI",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}
