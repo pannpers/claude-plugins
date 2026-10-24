@@ -1,6 +1,6 @@
 ---
 name: git-commit-formatter
-description: Split changes into cohesive commits and write each message in Conventional Commits format (`type(scope): description`, body, footers such as `Refs: #123` and `BREAKING CHANGE:`). Use this every time you are about to run `git commit`, whether the user asked for a commit ("commit this", "コミットして") or a larger task such as opening a PR or addressing review comments needs one.
+description: Use this skill for any request whose outcome is a new or rewritten git commit: committing working-tree or staged changes (in any language: "commit", "コミットして", "コミットまでやって"), deciding whether changes belong in one commit or several and splitting them, amending or rewording an existing commit message so it follows the team's format, and marking breaking changes. It covers grouping changes into logical commits and writing Conventional Commits messages (`type(scope): description`, why-focused body, `Refs: #123`, `BREAKING CHANGE:` / `!`). Load it before every `git commit` or `git commit --amend`, including the commits made inside a larger task such as opening a PR or addressing review comments. Do not use it for read-only git history questions (log summaries, blame), branch/stash work, releases or tags, or for installing and configuring commit-lint tooling, hooks or CI checks.
 ---
 
 # Commits
