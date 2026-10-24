@@ -1,6 +1,6 @@
 ---
 name: react-review
-description: Respond to review feedback on a GitHub pull request. Fetch every inline comment, review body and conversation comment (bots such as CodeRabbit and Copilot included), judge each one on its merits instead of accepting it, present a plan for approval, implement the approved fixes, reply in the original threads and check that nothing was left unanswered. Use this when the user asks to address, handle, reply to or resolve review comments ("レビュー対応して", "reply to the CodeRabbit comments"), and whenever a PR you are driving has unanswered review feedback.
+description: Use this skill for any request to act on review comments left on a GitHub pull request, including the simplest one: "address/handle the review comments on PR #N" ("PR のレビューコメントに対応して"). This also covers narrower or longer versions of that request: triaging comments from humans or bots (CodeRabbit, Copilot), working on a single quoted criticism and proposing how to respond, fixing the valid ones and pushing, and replying in each thread until none is left unanswered. The skill fetches every comment, judges each on its merits, gets the user to approve a plan, then commits, pushes and replies. When review comments drive the work, use this skill instead of the general pull-request or commit skills. Do not use it to review a PR yourself, summarize issue discussions, analyze past review trends, debug CI, or answer GitHub API questions.
 ---
 
 # Respond to PR review feedback

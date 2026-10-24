@@ -1,6 +1,6 @@
 ---
 name: pull-request
-description: Take local work to an open GitHub pull request and drive it to merge-ready. Commit, rebase, push, open the PR with gh, watch every CI check, resolve conflicts, get each review finding (bot reviews included) answered, and merge when the user or the repository allows it. Use this whenever the user says "create a PR", "open a pull request", "push this up", "submit for review", "get PR #N merged", "PR 出して" or "マージまで持っていって", and when you finish implementing a change that is meant to land through a PR, even if nobody said "PR".
+description: Use this skill whenever the user wants code changes to land through a GitHub pull request, in English or Japanese: shipping a finished branch or refactor, pushing and opening a PR (against any base, linked to an issue), "レビューに出して", "PR 出して", or taking an existing PR #N to merge ("マージまで持っていって"). Use it even when the request also covers babysitting CI, fixing failing checks, rebasing, resolving conflicts, clearing human or bot review findings, or squash-merging after checks pass. Use it as well when you finish an implementation that is meant to ship as a PR. Prefer it to running git and gh by hand, because it applies the repository's PR conventions and the merge gate. Do not use it for a single step on its own: only committing, only replying to review comments (use react-review), git or GitHub questions, writing CI workflow YAML, or checking branch status.
 ---
 
 # Pull request
