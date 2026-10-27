@@ -9,11 +9,6 @@
       "name": "mermaid-diagrams",
       "source": "./plugins/mermaid-diagrams",
       "description": "Choose the Mermaid diagram type that fits the information, write it from the current official syntax and check that it renders"
-    },
-    {
-      "name": "github-workflow",
-      "source": "./plugins/github-workflow",
-      "description": "Commit, open and drive GitHub pull requests to merge-ready, respond to review feedback, start tracked issues and cut SemVer releases with the gh CLI"
     }
   ]
 }
