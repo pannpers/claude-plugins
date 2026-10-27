@@ -1,6 +1,6 @@
 ---
 name: go-errors
-description: Go error handling judgement the docs leave open. Use it whenever you write or edit a .go file and the change creates, wraps, returns or checks errors (fmt.Errorf with %w, errors.Is / errors.As / errors.AsType, sentinel errors, custom error types, errors.Join). Not for tests (go-testing), SQL with pgx (go-postgres) or Connect handlers (go-connect-rpc).
+description: Go error handling judgement the docs leave open. Use it whenever you write or edit a .go file and the change creates, wraps, returns or checks errors (fmt.Errorf with %w, errors.Is / errors.As / errors.AsType, sentinel errors, custom error types, errors.Join), or decides where an error is logged versus returned. Not for tests (go-testing), SQL with pgx (go-postgres) or Connect handlers (go-connect-rpc).
 ---
 
 # Errors

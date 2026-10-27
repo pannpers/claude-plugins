@@ -1,6 +1,6 @@
 ---
 name: proto-api-design
-description: Designing gRPC or Connect APIs in Protocol Buffers along Google's API Improvement Proposals (AIP). Use it whenever you add or change a service, an rpc or a request or response message in a .proto file, name resources, fields or enums, design pagination, filtering, partial updates (field masks), batch or long-running methods, or review a proto API change for naming and consistency.
+description: Designing gRPC or Connect APIs in Protocol Buffers along Google's API Improvement Proposals (AIP). Use it whenever you add or change a service, an rpc (even a single one) or a request or response message in a .proto file, name resources, fields or enums, design pagination, filtering, partial updates (field masks), batch or long-running methods, or review a proto API change for naming and consistency.
 ---
 
 # Protocol Buffers API design
