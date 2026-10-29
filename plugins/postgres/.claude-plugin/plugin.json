@@ -1,0 +1,10 @@
+{
+  "name": "postgres",
+  "description": "PostgreSQL schema design and lock-safe migrations, read from the PostgreSQL docs for the server's version and checked against a real database",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}
