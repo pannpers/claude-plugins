@@ -1,0 +1,10 @@
+{
+  "name": "web-frontend",
+  "description": "Web front-end skills: Aurelia 2, CUBE CSS, modern CSS with Baseline checks, semantic HTML and accessibility, and PWAs, each read from the official source and verified in a browser",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}
