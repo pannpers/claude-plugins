@@ -1,6 +1,6 @@
 ---
 name: web-css
-description: Using modern CSS features and layout correctly, checked against Baseline browser support. Use it whenever you write or edit CSS and choose between Flexbox, Grid and subgrid, use container queries or media queries, logical properties, clamp() fluid sizing, custom properties or @property, colour functions (oklch, color-mix, relative colours), cascade layers, nesting, @scope, :has(), popover, anchor positioning, view transitions, scroll-driven animations or @starting-style, define design tokens, or replace JavaScript that does what CSS can now do.
+description: Using modern CSS features and layout correctly, checked against Baseline browser support. Use it whenever you write or edit CSS and choose between Flexbox, Grid and subgrid, use container queries or media queries, logical properties, clamp() fluid sizing, custom properties or @property, colour functions (oklch, color-mix, relative colours), cascade layers, nesting, @scope, :has(), popover, anchor positioning, view transitions, scroll-driven animations or @starting-style, define design tokens, position a popup or menu next to the element that opens it, animate a page or state transition, or replace JavaScript that does what CSS can now do.
 ---
 
 # Modern CSS
