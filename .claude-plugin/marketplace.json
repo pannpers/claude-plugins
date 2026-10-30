@@ -9,6 +9,31 @@
       "name": "mermaid-diagrams",
       "source": "./plugins/mermaid-diagrams",
       "description": "Choose the Mermaid diagram type that fits the information, write it from the current official syntax and check that it renders"
+    },
+    {
+      "name": "github-workflow",
+      "source": "./plugins/github-workflow",
+      "description": "Commit, open and drive GitHub pull requests to merge-ready, respond to review feedback, start tracked issues and cut SemVer releases with the gh CLI"
+    },
+    {
+      "name": "go",
+      "source": "./plugins/go",
+      "description": "Judgement for writing Go: error handling, doc comments, package layout, tests and benchmarks, pgx for PostgreSQL and connect-go v2 handlers, with version checks against go.mod and verification before hand-over"
+    },
+    {
+      "name": "protobuf",
+      "source": "./plugins/protobuf",
+      "description": "Designing Protocol Buffers APIs along Google AIP, and evolving schemas safely with protovalidate and the buf CLI (lint, format, breaking)"
+    },
+    {
+      "name": "web-frontend",
+      "source": "./plugins/web-frontend",
+      "description": "Web front-end skills: Aurelia 2, CUBE CSS, modern CSS with Baseline checks, semantic HTML and accessibility, and PWAs, each read from the official source and verified in a browser"
+    },
+    {
+      "name": "postgres",
+      "source": "./plugins/postgres",
+      "description": "PostgreSQL schema design and lock-safe migrations, read from the PostgreSQL docs for the server's version and checked against a real database"
     }
   ]
 }
