@@ -7,7 +7,7 @@ description: Go error handling judgement the docs leave open. Use it whenever yo
 
 The repository's own rules come first. Read AGENTS.md (or CLAUDE.md, CONTRIBUTING.md) and the linter configuration (`.golangci.yml`) before you write code; where they disagree with this skill, follow the repository.
 
-The `errors` and `fmt` docs explain the API; this file is about choosing between the options. For the API itself, run `go doc errors` and `go doc fmt.Errorf` inside the module (see "Check the Go version" in SKILL.md).
+The `errors` and `fmt` docs explain the API; this file is about choosing between the options. For the API itself, run `go doc errors` and `go doc fmt.Errorf` inside the module (see "Check the Go version" below).
 
 ## Choose how a caller can recognize the error
 

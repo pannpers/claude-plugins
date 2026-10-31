@@ -38,7 +38,7 @@ These look fine in the source and break on pkg.go.dev. gofmt does not fix them.
 
 ## Check the Go version
 
-Read the `go` line in `go.mod`. A feature is available only from that version on, for example `errors.AsType` from Go 1.26, `testing/synctest` from 1.25 and `T.Context` from 1.24.
+Read the `go` line in `go.mod`. A feature is available only from that version on; the doc comment syntax this skill relies on (links, lists, headings) is rendered from Go 1.19.
 
 Run `go doc` from inside the module directory. There, the toolchain that `go.mod` names answers; outside the module, the Go installed on the machine answers, and it may not know newer symbols (`go doc errors.AsType` fails on Go 1.25). Release notes, for checking what a version added: `https://raw.githubusercontent.com/golang/website/master/_content/doc/go1.NN.md`.
 

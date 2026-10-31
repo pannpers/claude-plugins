@@ -35,9 +35,9 @@ For each comment, read the code it points at and answer:
 4. What else could the change break: tests, public API, other open work?
 5. Is it in scope for this PR, or better as a follow-up?
 
-Then classify it with the table in `references/reply-templates.md`. Informational comments that ask for nothing (a bot's walkthrough summary, a coverage report) need no reply; list their IDs, one per line, in `$OUTDIR/no-reply.txt`.
+Then classify it with the table in `${CLAUDE_SKILL_DIR}/references/reply-templates.md`. Informational comments that ask for nothing (a bot's walkthrough summary, a coverage report) need no reply; list their IDs, one per line, in `$OUTDIR/no-reply.txt`.
 
-Write the plan following `references/plan-template.md`, put the whole plan in your message to the user (not just a path: `$OUTDIR` is a temporary directory they would have to dig out), and stop until they approve it. Also save it to `$OUTDIR/react-review-plan.md` so that you can work from it after approval. The user knows the intent behind the code and the priorities better than the reviewer or you do, so a fix that goes in without their approval may need reverting.
+Write the plan following `${CLAUDE_SKILL_DIR}/references/plan-template.md`, put the whole plan in your message to the user (not just a path: `$OUTDIR` is a temporary directory they would have to dig out), and stop until they approve it. Also save it to `$OUTDIR/react-review-plan.md` so that you can work from it after approval. The user knows the intent behind the code and the priorities better than the reviewer or you do, so a fix that goes in without their approval may need reverting.
 
 ## 3. Implement the approved plan
 
@@ -45,7 +45,7 @@ Work in this order: bugs, security issues and breaking changes first; then corre
 
 ## 4. Reply where the comment was made
 
-Each reply says what was pointed out, what you did and why, using the templates in `references/reply-templates.md`. Check each comment ID against `task.md` before you reply, so that no reply lands on the wrong comment.
+Each reply says what was pointed out, what you did and why, using the templates in `${CLAUDE_SKILL_DIR}/references/reply-templates.md`. Check each comment ID against `task.md` before you reply, so that no reply lands on the wrong comment.
 
 - **Inline comment**: reply in its thread.
 

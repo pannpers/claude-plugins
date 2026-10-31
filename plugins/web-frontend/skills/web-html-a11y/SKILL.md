@@ -17,6 +17,7 @@ gh api repos/w3c/aria-practices/contents/content/patterns --jq '.[].name'       
 curl -sL https://raw.githubusercontent.com/w3c/aria-practices/main/content/patterns/<name>/<name>-pattern.html | python3 -c "import sys,re,html;print(html.unescape(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',sys.stdin.read()))))"
 # MDN for an element or attribute (the JSON names the source file)
 curl -sL https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/<element>/index.json | python3 -c "import json,sys;print(json.load(sys.stdin)['doc']['source']['folder'])"
+curl -sL https://raw.githubusercontent.com/mdn/content/main/files/<folder>/index.md
 ```
 
 Check browser support for newer elements and attributes (`<dialog>` with `closedby`, `popover`, `<details name>`, customizable `<select>`) with the Baseline check in the `web-css` skill.

@@ -9,7 +9,7 @@ set -euo pipefail
 #
 # Reads the files fetch-comments.sh wrote to <outdir>/ and checks the PR's
 # current state:
-#   - each top-level inline comment needs a reply from the actor in its thread;
+#   - each inline thread whose latest comment is not from the actor needs a reply;
 #   - each review body and conversation comment needs a later comment from the
 #     actor that contains its URL, unless its ID is listed in
 #     <outdir>/no-reply.txt (one ID per line) as informational.
@@ -60,7 +60,7 @@ fi
 
 NO_REPLY="[]"
 if [[ -f "$OUTDIR/no-reply.txt" ]]; then
-  NO_REPLY=$(grep -Eo '[0-9]+' "$OUTDIR/no-reply.txt" | jq -R 'tonumber' | jq -s '.')
+  NO_REPLY=$({ grep -Eo '[0-9]+' "$OUTDIR/no-reply.txt" || true; } | jq -R 'tonumber' | jq -s '.')
 fi
 
 # Current state, including replies posted since the fetch
@@ -69,15 +69,16 @@ gh api "repos/${REPO}/pulls/${PR_NUMBER}/comments" --paginate \
 gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
   | jq -s 'add // []' > "$OUTDIR/current_issue.json"
 
-# Top-level inline comments without a reply from the actor
-UNREPLIED_INLINE=$(jq -r --arg actor "$ACTOR" --argjson skip "$NO_REPLY" --slurpfile cur "$OUTDIR/current_inline.json" '
-  ($cur[0] | [.[] | select(.user.login == $actor and .in_reply_to_id != null) | .in_reply_to_id]) as $replied
-  | .[]
-  | select(.in_reply_to_id == null)
-  | select((.id as $id | $replied | index($id)) == null)
+# Inline threads whose latest comment is not from the actor. This covers a new
+# finding (no reply yet) and a reviewer's follow-up inside an existing thread.
+UNREPLIED_INLINE=$(jq -r --arg actor "$ACTOR" --argjson skip "$NO_REPLY" '
+  group_by(.in_reply_to_id // .id)[]
+  | sort_by(.created_at) | last
+  | select(.user.login != $actor)
   | select((.id as $id | $skip | index($id)) == null)
+  | select(((.in_reply_to_id // .id) as $root | $skip | index($root)) == null)
   | "- ID: \(.id) | \(.path):\(.line // "N/A") | \(.html_url)"' \
-  "$OUTDIR/list_inline.json")
+  "$OUTDIR/current_inline.json")
 
 # Review bodies and conversation comments: answered when a later actor comment
 # (in the conversation or in any inline thread) contains the comment's URL
