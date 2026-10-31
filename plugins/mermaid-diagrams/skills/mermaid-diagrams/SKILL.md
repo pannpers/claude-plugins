@@ -1,6 +1,6 @@
 ---
 name: mermaid-diagrams
-description: Choose the Mermaid diagram type that fits the information, then write it from the current official syntax page and check that it renders. Mermaid has 30+ diagram types (sankey, xychart, treemap, venn, ishikawa, radar, quadrantChart, packet, architecture, block, treeView, timeline, kanban, gitGraph, requirement, usecase, wardley and more), but the habit is to reach for flowchart, sequenceDiagram or stateDiagram for everything. Use this skill every time you are about to write a ```mermaid block or a <pre class="mermaid"> — in an HTML report, an Artifact page, a GitHub PR, issue, README or other Markdown file, or a design doc — and whenever the user asks for a diagram, chart, 図, 図解, フロー図 or 可視化, even if they name no diagram type.
+description: Choose the Mermaid diagram type that fits the information, then write it from the current official syntax page and check that it renders. Mermaid has 30+ diagram types (sankey, xychart, treemap, venn, ishikawa, radar, quadrantChart, packet, architecture, block, treeView, timeline, kanban, gitGraph, requirement, usecase, wardley and more), but the habit is to reach for flowchart, sequenceDiagram or stateDiagram for everything. Use this skill every time you are about to write a ```mermaid block or an HTML pre element with class "mermaid" — in an HTML report, an Artifact page, a GitHub PR, issue, README or other Markdown file, or a design doc — and whenever the user asks for a diagram, chart, 図, 図解, フロー図 or 可視化, even if they name no diagram type.
 ---
 
 # mermaid-diagrams
