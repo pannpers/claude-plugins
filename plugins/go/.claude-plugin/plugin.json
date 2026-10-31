@@ -1,0 +1,10 @@
+{
+  "name": "go",
+  "description": "Judgement for writing Go: error handling, doc comments, package layout, tests and benchmarks, pgx for PostgreSQL and connect-go v2 handlers, with version checks against go.mod and verification before hand-over",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}

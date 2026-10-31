@@ -1,0 +1,10 @@
+{
+  "name": "protobuf",
+  "description": "Designing Protocol Buffers APIs along Google AIP, and evolving schemas safely with protovalidate and the buf CLI (lint, format, breaking)",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}
