@@ -27,7 +27,9 @@ Find the base branch: the default branch (`gh repo view --json defaultBranchRef 
 If `git status` shows changes:
 
 1. Read the full diff (`git diff` and `git diff --cached`), so that you commit only what belongs to this change.
-2. Run the checks the repository defines (its lint, type check and test commands, usually named in AGENTS.md, a Makefile or package.json). Fix failures before committing; a red commit makes CI fail and blocks the PR later anyway.
+2. Make sure the checks the repository defines (its lint, type check and test commands, usually named in AGENTS.md, a Makefile or package.json) pass before the commit; a red commit makes CI fail and blocks the PR later anyway.
+   - If a hook already runs them on `git commit` (a `PreToolUse` hook in `.claude/settings.json` or `~/.claude/settings.json`, or a git `pre-commit` hook), do not run them yourself first: commit, and if the hook blocks the commit, fix what its output names and commit again. Running them by hand as well doubles the wait for every commit.
+   - Otherwise run them yourself. Cloud sessions (`CLAUDE_CODE_REMOTE` is `true`) never read `~/.claude/settings.json`, and some never run repository hooks, so a hook you see locally may not run there.
 3. Read `${CLAUDE_PLUGIN_ROOT}/skills/git-commit-formatter/SKILL.md` now, if you have not read it in this session, and commit following it.
 
 ## 3. Rebase on the base branch
