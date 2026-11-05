@@ -88,7 +88,7 @@ Tie-breakers:
 Fetch the page's Markdown source. It is the exact text (WebFetch would summarize it), and every feature heading carries the version it needs, such as "(v11.16.0+)":
 
 ```bash
-curl -sL https://raw.githubusercontent.com/mermaid-js/mermaid/develop/packages/mermaid/src/docs/syntax/<slug>.md
+curl -sL https://raw.githubusercontent.com/mermaid-js/mermaid/develop/packages/mermaid/src/docs/syntax/<slug>.md -o <slug>.md
 ```
 
 Some pages run past 1,000 lines (flowchart, sequenceDiagram); read the first example and the list of headings rather than loading the whole page:
@@ -118,7 +118,7 @@ If the best type is too new for the renderer, take the next best type from step 
 Since v12.0.0 the theme, the look and the layout have per-type defaults (`config/theming.md`, "Per-diagram defaults", and `config/layouts.md` on the same raw URL base, under `docs/config/`):
 
 - `flowchart`, `sequenceDiagram`, `classDiagram`, `stateDiagram`, `erDiagram`, `requirementDiagram`, `usecase-beta`, `venn-beta`, `swimlane-beta` and `agentflow-beta` default to the `redux-color` theme and the `neo` look. Every other type keeps `default` and `classic`.
-- The `look` and `layout` options apply only to flowchart, state, class, ER, requirement, use case and agentflow diagrams; on other types they change nothing. Those types are laid out with ELK by default (rendered on 12.2.0 with and without `layout: elk`: identical output; `theming.md` still says `dagre`, which is out of date).
+- The `layout` option applies only to flowchart, state, class, ER, requirement, use case and agentflow diagrams, and those are laid out with ELK by default. `look` changes those and `sequenceDiagram`; it did not change `venn-beta` or `pie`, so do not count on it for other types (checked by rendering on 12.2.0). The ELK default was checked (rendered on 12.2.0 with and without `layout: elk`: identical output; `theming.md` still says `dagre`, which is out of date).
 - A theme passed to `mermaid.initialize()` beats the per-type default, and a diagram's front matter beats both.
 
 What to do depends on who calls `mermaid.initialize()`:
