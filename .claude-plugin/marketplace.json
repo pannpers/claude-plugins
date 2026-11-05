@@ -34,6 +34,11 @@
       "name": "postgres",
       "source": "./plugins/postgres",
       "description": "PostgreSQL schema design and lock-safe migrations, read from the PostgreSQL docs for the server's version and checked against a real database"
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Write and revise prose for human readers in any language: explain the point concretely first, then tighten it without losing meaning or conditions"
     }
   ]
 }
