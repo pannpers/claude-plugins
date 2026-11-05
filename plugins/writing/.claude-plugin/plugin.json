@@ -1,0 +1,10 @@
+{
+  "name": "writing",
+  "description": "Write and revise prose for human readers in any language: explain the point concretely first, then tighten it without losing meaning or conditions",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}

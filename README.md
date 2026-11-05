@@ -12,6 +12,7 @@ A Claude Code plugin marketplace with general-purpose skills.
 | [protobuf](plugins/protobuf) | Protocol Buffers API design along Google's AIPs, safe schema changes, protovalidate rules and the buf toolchain. |
 | [web-frontend](plugins/web-frontend) | Aurelia 2, CUBE CSS, modern CSS with Baseline checks, semantic HTML and accessibility, and PWAs. |
 | [postgres](plugins/postgres) | PostgreSQL schema design and migrations that do not lock out a running application. |
+| [writing](plugins/writing) | Prose for human readers in any language: explain the point concretely first, then shorten it without losing meaning or conditions. |
 
 ## Install
 
