@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: github-readme-pipeline-flowchart
+expected_outcome: |
+  A flowchart in GitHub-flavoured Markdown with no theme set in the diagram, the database and the queues drawn with datastore or queue shapes, rendered and checked against GitHub's Mermaid version.
