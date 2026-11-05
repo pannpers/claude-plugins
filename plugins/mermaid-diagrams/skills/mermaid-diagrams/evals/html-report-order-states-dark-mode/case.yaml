@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: html-report-order-states-dark-mode
+expected_outcome: |
+  A self-contained HTML page that loads a pinned Mermaid 12+ version and initializes it with a light and a dark theme chosen from the colour scheme, with a state diagram that renders.
