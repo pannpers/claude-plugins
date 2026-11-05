@@ -128,7 +128,7 @@ The PR is merge-ready when all of these hold:
 2. `mergeable` is not `CONFLICTING`.
 3. Every review finding, from people and from bots, has been fixed or answered in its thread through `react-review`, and its reconcile script exits 0.
 
-When the PR is merge-ready, merge it without asking. Do not merge, and instead report that the PR is merge-ready with its link, when the user asked in this conversation not to merge or to stop before merging, or when the repository's instructions say agents do not merge. Merging is visible to everyone and hard to undo, so never merge before every condition above holds.
+When the PR is merge-ready, merge it without asking. Do not merge, and instead report that the PR is merge-ready with its link, when the user asked in this conversation not to merge or to stop before merging, or when the user's or the repository's instructions (`CLAUDE.md`, `AGENTS.md`) say agents do not merge. Merging is visible to everyone and hard to undo, so never merge before every condition above holds.
 
 To merge, use a method the repository allows:
 
