@@ -17,7 +17,7 @@ Read the whole diff first: `git diff` and `git diff --cached`. Then group the ch
 
 - **One logical change per commit.** A feature that touches several files or layers (for example a new field in the model, its storage and its API) is one change and belongs in one commit. Splitting it by layer leaves commits that do not work on their own.
 - **Keep unrelated changes apart.** A bug fix, an unrelated refactor and a typo fix found along the way are three commits, so that each can be reviewed, reverted or cherry-picked alone.
-- **Every commit should build and pass the tests**, so that `git bisect` and reverts keep working.
+- **Every commit should build and pass the tests**, so that `git bisect` and reverts keep working. Group the changes so that this holds. When a commit hook runs the repository's checks, the hook verifies it; do not also run those checks yourself just before committing.
 
 Stage each group explicitly (`git add <paths>`, or `git add -p` for files that hold more than one change), and check `git diff --cached` before each commit.
 
