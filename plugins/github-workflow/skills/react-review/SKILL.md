@@ -41,7 +41,7 @@ Write the plan following `${CLAUDE_SKILL_DIR}/references/plan-template.md`, put 
 
 ## 3. Implement the approved plan
 
-Work in this order: bugs, security issues and breaking changes first; then correctness, performance and reliability; then readability; then minor polish. Run the repository's lint and tests, and commit each related group of fixes on its own, so that each reply can point at the commit that answers it. Push when done.
+Work in this order: bugs, security issues and breaking changes first; then correctness, performance and reliability; then readability; then minor polish. Commit each related group of fixes on its own (the repository's checks run as in the pull-request skill: when a commit hook runs them, do not run them yourself first), so that each reply can point at the commit that answers it. Push when done.
 
 ## 4. Reply where the comment was made
 
