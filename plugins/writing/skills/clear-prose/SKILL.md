@@ -17,6 +17,21 @@ Scale the effort to the text. For a two-line commit message or chat reply, run t
 4. **Shorten without changing the meaning.** Cut repetition and roundabout wording. Do not change the claim, its subject, cause and effect, comparisons, how strongly something is asserted, or important conditions. If the text is still hard to read, narrow the topics or restructure rather than deleting more words.
 5. **Check the finished text.** Read only the final text and confirm the point and its conditions come across. If shortening lost meaning, put the needed explanation back.
 
+## Names and sentences
+
+- **Use the names the source defines.** When the text describes a system, a spec or a codebase, call each thing by the name that source gives it (an entity, an attribute, a state, a screen), and define a name once, where the reader first meets it or in a short glossary. Do not swap in a plain word that sounds close: in Japanese, 状況 for a `status`, 登録 for a sign-up. The reader cannot tell whether it is the same thing or a new one, and the word means nothing to anyone who opens the source.
+- **Give every sentence a subject and a verb.** Say who acts and what they do: "the app saves Tracking", not "saved as Tracking" or a bare noun phrase. This holds for labels inside diagrams, table cells and bullet points too, where subjects go missing most often.
+
+## Documents with sections
+
+A reader who opens a section in the middle of a document has not seen the reasoning that led to it. Write each section so it can be read on its own:
+
+1. **Open with the context.** One or two sentences on the situation the section is about (who is doing what, and why it matters), and on what the section or its figure shows.
+2. **Then the point.** What the reader should take away or check, as a short list of claims with their conditions.
+3. **Then the detail.** The figure, the table, the long explanation.
+
+Open the document itself with its purpose (what the reader can do with it), what the thing it describes is, and how to read any notation it uses. A section that lists what the document leaves out says why each item is left out (another document covers it, it is out of scope).
+
 ## Output
 
 Show the finished text first. Share drafts or the reasoning behind them only when asked. When editing, change only the source and the range the user named; if you could not confirm that a save or display succeeded, say so separately.
