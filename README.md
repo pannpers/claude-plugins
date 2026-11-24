@@ -13,6 +13,7 @@ A Claude Code plugin marketplace with general-purpose skills.
 | [web-frontend](plugins/web-frontend) | Aurelia 2, CUBE CSS, modern CSS with Baseline checks, semantic HTML and accessibility, and PWAs. |
 | [postgres](plugins/postgres) | PostgreSQL schema design and migrations that do not lock out a running application. |
 | [writing](plugins/writing) | Prose for human readers in any language: explain the point concretely first, then shorten it without losing meaning or conditions. |
+| [gemini-draft](plugins/gemini-draft) | Has Gemini (Antigravity CLI `agy`) draft a document or spec, opens it in Plannotator for a person to annotate or approve, and feeds annotations back to Gemini until approved. |
 
 ## Install
 
