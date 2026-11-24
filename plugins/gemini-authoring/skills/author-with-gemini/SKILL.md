@@ -1,24 +1,26 @@
 ---
-name: draft-with-gemini
-description: Have Gemini (Antigravity CLI, `agy`) draft a document, spec, plan or proposal, then put it in front of the user in Plannotator to annotate or approve, and feed their annotations back to Gemini until it is approved. Claude runs the loop; Gemini only writes. Use this whenever the user asks for a doc, README, design note, OpenSpec change or spec, plan or proposal and wants Gemini to write it, says Gemini reads better, asks for "agy で下書き", "Gemini に書かせて", "Plannotator でレビューして", or asks Claude to produce a document that a person will review. Use it even when the user does not name agy or Plannotator, as long as both are installed and the user prefers Gemini-written prose. Skip it for code, tiny edits and unattended runs, because the review step needs a person at the screen.
+name: author-with-gemini
+description: Default way to produce a written document or plan when Gemini (Antigravity CLI, `agy`) and Plannotator are installed. Claude has Gemini write or rewrite the document or plan, a person reviews it in Plannotator, and their annotations go back to Gemini until they approve. Claude runs the loop; Gemini only writes. Use it whenever the user asks Claude to create, rewrite or restructure documentation (README, design doc, runbook, report, proposal), an OpenSpec change or spec, an implementation plan or any other plan that a person will read, and when the user asks for a Gemini or agy draft or a Plannotator review. Use it even when the user names neither tool. Skip it for code, small edits such as a typo or one sentence, an unattended run (the review needs a person at the screen), and when the user says to write it yourself.
 compatibility: Needs `agy` (tested with 1.4.7) and `plannotator` (tested with 0.29.3) on PATH, and a person who can answer in a browser.
 ---
 
-# Draft with Gemini, review in Plannotator
+# Author with Gemini, review in Plannotator
 
-Gemini writes the draft, a person reviews it, Claude runs the loop between them.
+Gemini writes or rewrites the document or plan, a person reviews it, Claude runs the loop between them. The user prefers Gemini's prose for documents and wants a person to approve before a document counts as done.
 
 ```
-Claude ─ task ─▶ agy (draft) ─▶ files ─▶ checks ─▶ Plannotator (person) ─┬─ approved   → done
+Claude ─ task ─▶ agy (write) ─▶ files ─▶ checks ─▶ Plannotator (person) ─┬─ approved   → done
    ▲                                                                     ├─ annotated  → back to agy
    └───────────── annotations, same conversation ◀───────────────────────┘ └─ dismissed  → ask the person
 ```
 
 Claude owns the loop because the person may take a long time to answer. A headless `agy -p` run cannot wait that long and cannot answer an approval prompt, so `agy` never calls Plannotator itself.
 
-## 1. Check the preconditions
+## 1. Decide whether to use it
 
-Run `command -v agy plannotator`. If either is missing, or nobody is at the screen (a scheduled or CI run), write the document yourself and say in one line that you did, and why. Do not install tools on your own.
+Use it when the result is a document or plan for a person to read. A round trip costs minutes and a review in the browser, so skip it for a typo, a single sentence, a code comment or anything the user asked you to write yourself, and say in one line that you skipped it.
+
+Run `command -v agy plannotator`. If either is missing, or nobody is at the screen (a scheduled or CI run), write the document yourself and say why. Do not install tools on your own.
 
 ## 2. Choose where Gemini works
 
@@ -33,13 +35,16 @@ Run `command -v agy plannotator`. If either is missing, or nobody is at the scre
 Keep it short and concrete. A task Gemini can act on states:
 
 - the goal, and who will read the result;
-- the exact paths it may write, and that it must write nowhere else and run no git commands;
+- for a new document, the exact paths it may write; for a rewrite, the existing path and the change wanted, and that everything the request does not touch stays as it is;
+- that it writes nowhere else and runs no git commands;
 - an existing file to imitate for structure and wording, and the repository's vocabulary for defined names;
 - the language of the document;
 - the user's own rules from step 2;
 - that it replies with only the list of files it wrote.
 
-Describing a goal and naming a model file to imitate works better than listing every format rule, because `agy` can read the repository itself.
+Naming a model file to imitate works better than listing every format rule, because `agy` can read the repository itself.
+
+Plans come in two forms. A plan that is a file in the repository (an OpenSpec `design.md` or `tasks.md`, a plan document) is written like any other document. A plan the person only reads before any work starts can use `--mode plan` (step 4). When Claude Code is itself in plan mode, prefer `--mode plan` so that no file is written, and carry the result into your plan.
 
 ## 4. Run `agy`
 
@@ -50,7 +55,7 @@ agy -p "<task>" --mode accept-edits --output-format json --print-timeout 540s < 
 
 - Run it in the background and wait for the notification; do not poll.
 - Add `--model <name>` when the user names one (`agy models` lists them).
-- `accept-edits` approves file edits inside the workspace and is the narrowest setting that lets a drafting task finish. Use `--mode plan` only when the user wants an implementation plan before any coding: it writes no workspace files and puts the plan at `~/.gemini/antigravity-cli/brain/<conversation_id>/implementation_plan.md`, which you pass to the review step.
+- `accept-edits` approves file edits inside the workspace and is the narrowest setting that lets a writing task finish. `--mode plan` writes no workspace files: it puts a plan at `~/.gemini/antigravity-cli/brain/<conversation_id>/implementation_plan.md`, which you pass to the review step.
 - Do not trust the exit code. A shell command that needs approval ends a headless run with no output and exit 0. Read `.response`, check stderr, and check which files exist. If it stopped on an approval, retry once with `--dangerously-skip-permissions`, only inside the isolated worktree.
 - Keep `.conversation_id` from the JSON. Every later round resumes it.
 - `duration_seconds` is cumulative for the whole conversation, not for the last call. Time a call yourself if you need to know.
@@ -75,7 +80,7 @@ The script starts Plannotator's gated review, opens the browser (WSL, macOS and 
 
 | `decision` | What it means | What to do |
 |---|---|---|
-| `approved` | The person accepts the draft | Finish: step 8 |
+| `approved` | The person accepts the result | Finish: step 8 |
 | `annotated` | Comments on selected text, in `feedback` | Step 7 |
 | `dismissed` | The person closed the tab | Do not treat it as approval. Ask what they want |
 
