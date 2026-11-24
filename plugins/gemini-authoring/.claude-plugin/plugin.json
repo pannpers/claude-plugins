@@ -1,0 +1,10 @@
+{
+  "name": "gemini-authoring",
+  "description": "Have Gemini (Antigravity CLI) write or rewrite documents and plans, review them with a person in Plannotator, and feed the annotations back until approved",
+  "version": "0.1.0",
+  "author": {
+    "name": "pannpers"
+  },
+  "repository": "https://github.com/pannpers/claude-plugins",
+  "license": "MIT"
+}

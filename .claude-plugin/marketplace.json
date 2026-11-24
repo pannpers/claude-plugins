@@ -39,6 +39,11 @@
       "name": "writing",
       "source": "./plugins/writing",
       "description": "Write and revise prose for human readers in any language: explain the point concretely first, then tighten it without losing meaning or conditions"
+    },
+    {
+      "name": "gemini-authoring",
+      "source": "./plugins/gemini-authoring",
+      "description": "Have Gemini (Antigravity CLI) write or rewrite documents and plans, review them with a person in Plannotator, and feed the annotations back until approved"
     }
   ]
 }
