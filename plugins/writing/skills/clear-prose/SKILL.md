@@ -30,7 +30,7 @@ A reader who opens a section in the middle of a document has not seen the reason
 2. **Then the point.** What the reader should take away or check, as a short list of claims with their conditions.
 3. **Then the detail.** The figure, the table, the long explanation.
 
-Open the document itself with its purpose (what the reader can do with it), what the thing it describes is, and how to read any notation it uses. A section that lists what the document leaves out says why each item is left out (another document covers it, it is out of scope).
+Open the document itself with its purpose (what the reader can do with it), what the thing it describes is, the order of its sections and why that order, and how to read any notation it uses. A section that lists what the document leaves out says why each item is left out (another document covers it, it is out of scope).
 
 ## Output
 
